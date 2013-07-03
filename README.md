@@ -1,4 +1,4 @@
-Sylius [![Build status...](https://secure.travis-ci.org/Sylius/Sylius.png?branch=master)](http://travis-ci.org/Sylius/Sylius)
+Sylius [![Build status...](https://secure.travis-ci.org/Sylius/Sylius.png?branch=master)](http://travis-ci.org/headrevision/Sylius)
 ======
 
 Sylius is **modern ecommerce solution for PHP**, based on the [**Symfony2**](http://symfony.com) framework.

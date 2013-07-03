@@ -5,6 +5,11 @@ php:
   - 5.4
   - 5.5
 
+env:
+  global:
+    - secure: "M3KXHUit0aiGJH6YJrIXWpow8JPEL4B6IWWKTrYv8WpvsBI3rzLSjCZ0vQnj\nxTXpcDHd08EOgKXreP4yr4BMRW6xVDj/EJXDPJAcJqgBdnwpAAwPEuMfF4OE\njr7yFBJMdqPrheKN2u8A8tGywOQqblK0eNXsQCaDh6nINkJbAIE="
+    - secure: "aD88Z3v1t/oH0806kNPoke3LoT750JRMKcfafxD6augMJlHjkI5p6Tk8F62h\n67b+T9QasntA0k8jYYMsn1LqqeAiOM0y+rkmgDIRo3OlkYjiir3AWid7jK3i\n/+2OzeVX493bPH6LgA6GznAhAJrESCymTyYrTk4VDB7bwsxY0kE="
+
 matrix:
     allow_failures:
         - php: 5.5
@@ -24,19 +29,11 @@ before_script:
     - chmod -R 777 app/cache app/logs
     - app/console cache:warmup --env=test > /dev/null
     - chmod -R 777 app/cache app/logs
-#   - "sh -e /etc/init.d/xvfb start"
-#   - "export DISPLAY=:99.0"
-#   - "wget http://selenium.googlecode.com/files/selenium-server-standalone-2.31.0.jar"
-#   - "java -jar selenium-server-standalone-2.31.0.jar > /dev/null &"
-#   - sleep 5
+    - curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash
+    - sed -i "s/your_saucelabs_username/$SAUCE_USERNAME/" behat.yml.dist
+    - sed -i "s/your_saucelabs_apikey/$SAUCE_ACCESS_KEY/" behat.yml.dist
 
 script:
-    - bin/behat --no-snippets --no-paths --verbose -p frontend
-    - php -d memory_limit=1024M bin/behat --no-snippets --no-paths --verbose -p backend
-#   - bin/behat --no-snippets --no-paths --verbose -p api
+    - php -d memory_limit=1024M bin/behat --no-snippets --no-paths --verbose -p saucelabs
     - bin/phpspec run src/Sylius/Bundle/CoreBundle/spec -fpretty --verbose
     - bin/phpspec run src/Sylius/Bundle/WebBundle/spec -fpretty --verbose
-
-notifications:
-  email: "travis-ci@sylius.org"
-  irc:   "irc.freenode.org#sylius-dev"
