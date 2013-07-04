@@ -7,8 +7,8 @@ php:
 
 env:
   global:
-    - secure: "M3KXHUit0aiGJH6YJrIXWpow8JPEL4B6IWWKTrYv8WpvsBI3rzLSjCZ0vQnj\nxTXpcDHd08EOgKXreP4yr4BMRW6xVDj/EJXDPJAcJqgBdnwpAAwPEuMfF4OE\njr7yFBJMdqPrheKN2u8A8tGywOQqblK0eNXsQCaDh6nINkJbAIE="
-    - secure: "aD88Z3v1t/oH0806kNPoke3LoT750JRMKcfafxD6augMJlHjkI5p6Tk8F62h\n67b+T9QasntA0k8jYYMsn1LqqeAiOM0y+rkmgDIRo3OlkYjiir3AWid7jK3i\n/+2OzeVX493bPH6LgA6GznAhAJrESCymTyYrTk4VDB7bwsxY0kE="
+    - secure: "P9+lNYQxmYudD1NsWGxcGdXlX/jE64UCeIcnNxbTAsYjdjnwB8yB9CyBj3qI\nPxRhYNZAQxR0Asd4F2VF0LVxMojZ1mZHLbuOQFU2ua4VEfHqMn2VZGuC/oem\nKxpf2lfYuTU/92KxJ6b19op7fLk70KCyFrbVzWm6kDpvjWuks/U="
+    - secure: "KObpQBDsdS6VU1UXpAEFa3yuoQooFpmtQzpPLkQ88QWL3ixFWai9oZ+g5oaf\nCfgC/eVAa7zHHu3/keF2rxF4TzxEq7ENLDrBOqsQJIK4mt3qMWbWf+aMAMki\nDMcumM7T9LTQvO+nr9lBjzME2UZGtjgEnV1U1j/pA/71+p+xH88="
 
 matrix:
     allow_failures:
