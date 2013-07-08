@@ -27,8 +27,8 @@ before_script:
     - app/console doctrine:database:create --env=test > /dev/null
     - app/console doctrine:schema:create --env=test > /dev/null
     - chmod -R 777 app/cache app/logs
-    - app/console cache:warmup --env=test > /dev/null
-    - chmod -R 777 app/cache app/logs
+#    - app/console cache:warmup --env=test > /dev/null
+#    - chmod -R 777 app/cache app/logs
     - curl https://gist.github.com/santiycr/5139565/raw/sauce_connect_setup.sh | bash
     - sed -i "s/your_saucelabs_username/$SAUCE_USERNAME/" behat.yml.dist
     - sed -i "s/your_saucelabs_apikey/$SAUCE_ACCESS_KEY/" behat.yml.dist
