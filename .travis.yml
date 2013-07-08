@@ -34,6 +34,6 @@ before_script:
     - sed -i "s/your_saucelabs_apikey/$SAUCE_ACCESS_KEY/" behat.yml.dist
 
 script:
-    - php -d memory_limit=1024M bin/behat --no-snippets --no-paths --verbose -p saucelabs
+    - php -d memory_limit=1024M bin/behat --no-snippets --no-paths --verbose -p saucelabs features/sauce_connect_demo.feature
     - bin/phpspec run src/Sylius/Bundle/CoreBundle/spec -fpretty --verbose
     - bin/phpspec run src/Sylius/Bundle/WebBundle/spec -fpretty --verbose

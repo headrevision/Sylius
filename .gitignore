@@ -17,4 +17,9 @@ web/media/*
 bin/behat
 bin/doctrine*
 bin/phpspec
+bin/paratest
+bin/phpunit
+bin/sauce_config
+bin/sauce_connect
+sauce_connect.log
 vendor/*

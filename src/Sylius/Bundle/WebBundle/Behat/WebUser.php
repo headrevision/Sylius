@@ -47,6 +47,8 @@ class WebUser extends MinkContext implements KernelAwareInterface
     {
         // Sylius data creation context.
         $this->useContext('data', new DataContext());
+        // Sauce Connect demo context.
+        $this->useContext('sauce', new SauceConnectDemoContext());
     }
 
     /**
